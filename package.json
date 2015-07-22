@@ -28,6 +28,7 @@
     "babel-loader": "^5.3.2",
     "css-loader": "^0.15.5",
     "cssnext-loader": "^1.0.1",
+    "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.0",
     "html-webpack-template": "^2.2.0",
     "node-libs-browser": "^0.5.2",
