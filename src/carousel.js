@@ -1,7 +1,5 @@
 import React from 'react/addons'
 
-import styles from './carousel-styles'
-
 const { number } = React.PropTypes
 
 export default class Carousel extends React.Component {
@@ -39,7 +37,7 @@ export default class Carousel extends React.Component {
   }
   render() {
     return (
-      <div style={styles.root}>
+      <div className="dft__carousel">
         {this.renderSlides()}
         {this.renderNav()}
       </div>

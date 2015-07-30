@@ -16,6 +16,9 @@ module.exports = {
         test: /\.js/, loader: 'babel?stage=0'
       },
       {
+        test: /\.css/, loader: 'style!css!cssnext'
+      },
+      {
         test: /\.jpg/, loader: 'file'
       }
     ]

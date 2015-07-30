@@ -1,0 +1,11 @@
+@import "./config.css";
+
+:root {
+  --paddingHorz: 20px;
+}
+
+.dft__frame {
+  max-width: 100%;
+  width: var(--imageWidth);
+  margin: 0 auto;
+}

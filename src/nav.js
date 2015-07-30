@@ -1,6 +1,5 @@
+import classnames from 'classnames'
 import React from 'react'
-
-import styles from './nav-styles'
 
 const { func, bool } = React.PropTypes
 
@@ -13,16 +12,20 @@ export default class Nav extends React.Component {
     hasNext: bool
   }
   getPrevClassName() {
-    return this.props.hasPrevious ? styles.prev : styles.prevHidden
+    return classnames('dft__nav__btn', 'dft__nav__btn--prev', {
+      'dft__nav__btn--hidden': !this.props.hasPrevious,
+    })
   }
   getNextClassName() {
-    return this.props.hasNext ? styles.next : styles.nextHidden
+    return classnames('dft__nav__btn', 'dft__nav__btn--next', {
+      'dft__nav__btn--hidden': !this.props.hasNext,
+    })
   }
   render() {
     return (
-      <div style={styles.root}>
-        <button style={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
-        <button style={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
+      <div className="dft__nav">
+        <button className={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
+        <button className={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
       </div>
     )
   }
