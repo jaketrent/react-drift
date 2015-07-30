@@ -1,14 +1,11 @@
 @import "./config.css";
+
 :root {
   --paddingHorz: 20px;
 }
 
 .root {
-  position: relative;
   max-width: 100%;
-  width: calc(var(--imageWidth) + 2 * var(--paddingHorz));
+  width: var(--imageWidth);
   margin: 0 auto;
-  padding: 20px var(--paddingHorz);
-  border: 1px solid #ababab;
-  border-radius: 5px;
 }
