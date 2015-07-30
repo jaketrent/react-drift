@@ -27,7 +27,12 @@ const btn = {
   outline: 0,
   cursor: 'pointer',
   userSelect: 'none',
-  animation: `${pulse} 4s 2s infinite`
+  animation: `${pulse} 4s 2s infinite`,
+
+  ':hover': {
+    transition: 'all 1s',
+    color: 'rgb(255, 237, 151)'
+  }
 }
 
 const prev = {

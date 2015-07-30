@@ -23,8 +23,8 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div style={styles.root}>
-        <button style={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
-        <button style={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
+        <button key="prev" style={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
+        <button key="next" style={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
       </div>
     )
   }
