@@ -2,7 +2,6 @@ import autobind from 'autobind-decorator'
 import React from 'react'
 
 import Carousel from './carousel'
-import css from './index.css'
 import Frame from './frame'
 import Nav from './nav'
 import Slide from './slide'

@@ -1,9 +1,7 @@
 import React from 'react/addons'
-import styleable from 'react-styleable'
 
 const { number } = React.PropTypes
 
-@styleable(require('./carousel.css'))
 export default class Carousel extends React.Component {
   static propTypes = {
     width: number,
@@ -39,7 +37,7 @@ export default class Carousel extends React.Component {
   }
   render() {
     return (
-      <div className={this.props.css.root}>
+      <div>
         {this.renderSlides()}
         {this.renderNav()}
       </div>
