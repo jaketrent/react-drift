@@ -33,6 +33,7 @@
     "html-webpack-plugin": "^1.6.0",
     "html-webpack-template": "^2.2.0",
     "node-libs-browser": "^0.5.2",
+    "radium": "^0.13.5",
     "react": "^0.13.3",
     "react-styleable": "^1.4.0",
     "style-loader": "^0.12.3",

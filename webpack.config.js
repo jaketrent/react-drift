@@ -16,7 +16,7 @@ module.exports = {
         test: /\.js/, loader: 'babel?stage=0'
       },
       {
-        test: /\.css/, loader: 'style!css?modules&localIdentName=[local]---[hash:base64:5]!cssnext'
+        test: /\.css/, loader: 'style!css'
       },
       {
         test: /\.jpg/, loader: 'file'
