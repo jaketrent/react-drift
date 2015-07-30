@@ -1,11 +1,9 @@
-import Radium from 'radium'
 import React from 'react'
 
 import styles from './nav-styles'
 
 const { func, bool } = React.PropTypes
 
-@Radium
 export default class Nav extends React.Component {
   static displayName = 'Nav'
   static propTypes = {
@@ -23,8 +21,8 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div style={styles.root}>
-        <button key="prev" style={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
-        <button key="next" style={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
+        <button style={this.getPrevClassName()} onClick={this.props.onPrevious}>&#10094;</button>
+        <button style={this.getNextClassName()} onClick={this.props.onNext}>&#10095;</button>
       </div>
     )
   }
