@@ -1,12 +1,12 @@
 import autobind from 'autobind-decorator'
+import { default as Radium, Style } from 'radium'
 import React from 'react'
 
 import Carousel from './carousel'
 import Frame from './frame'
 import Nav from './nav'
 import Slide from './slide'
-
-import css from './index.css'
+import styles from './index-styles'
 
 @autobind
 export default class DriftApp extends React.Component {
@@ -27,6 +27,7 @@ export default class DriftApp extends React.Component {
   render() {
     return (
       <Frame>
+        <Style rules={styles} />
         <Carousel showIndex={this.state.showIndex}>
           <Nav onPrevious={this.handleClickPrevious} hasPrevious={this.state.showIndex > 0}
                onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
