@@ -17,7 +17,10 @@ export default {
     padding: '15px',
     background: 'rgba(0, 0, 0, .3)',
     color: '#fff',
-    textShadow: '1px 1px 0 rgba(0, 0, 0, .6)'
+    textShadow: '1px 1px 0 rgba(0, 0, 0, .6)',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontSize: 14,
+    lineHeight: '1.4em'
   },
   title: {
     margin: '0 0 10px 0'

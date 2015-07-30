@@ -5,7 +5,6 @@ import Carousel from './carousel'
 import Frame from './frame'
 import Nav from './nav'
 import Slide from './slide'
-import styles from './index-styles'
 
 @autobind
 export default class DriftApp extends React.Component {
