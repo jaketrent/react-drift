@@ -11,7 +11,7 @@ export default class Slide extends React.Component {
       <article className="dft__slide" style={this.props.style}>
         <img src={this.props.image} alt={this.props.title} />
         <footer className="dft__slide__footer">
-          <h2 className="dft__slide__title">{this.props.title}</h2>
+          <h2 className="dft__slide__footer__title">{this.props.title}</h2>
           <div>{this.props.children}</div>
         </footer>
       </article>
