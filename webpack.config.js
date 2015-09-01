@@ -1,8 +1,13 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
+var webpack = require('webpack')
+
+var PORT = 3000
 
 module.exports = {
   entry: [
+    'webpack-dev-server/client?http://0.0.0.0:' + PORT,
+    'webpack/hot/only-dev-server',
     'babel/polyfill',
     './index.js'
   ],
@@ -13,7 +18,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js/, loader: 'babel?stage=0'
+        test: /\.js/, loader: 'react-hot!babel?stage=0', exclude: /node_modules/
       },
       {
         test: /\.jpg/, loader: 'file'
@@ -21,12 +26,14 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3000
+    port: PORT,
+    hot: true
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './node_modules/html-webpack-template/index.html',
-      devServer: 'http://localhost:3000',
+      devServer: 'http://localhost:' + PORT,
       appMountId: 'app'
     })
   ]
