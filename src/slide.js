@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './slide-styles'
+
 export default class Slide extends React.Component {
   static displayName = 'Slide'
   static propTypes = {
@@ -8,10 +10,10 @@ export default class Slide extends React.Component {
   }
   render() {
     return (
-      <article style={this.props.style}>
+      <article style={{ ...styles.root, ...this.props.style }}>
         <img src={this.props.image} alt={this.props.title} />
-        <footer>
-          <h2>{this.props.title}</h2>
+        <footer style={styles.footer}>
+          <h2 style={styles.title}>{this.props.title}</h2>
           <div>{this.props.children}</div>
         </footer>
       </article>
