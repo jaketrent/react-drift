@@ -1,10 +1,12 @@
 import autobind from 'autobind-decorator'
 import React from 'react'
+import {Style} from 'radium'
 
 import Carousel from './carousel'
 import Frame from './frame'
 import Nav from './nav'
 import Slide from './slide'
+import styles from './index-styles'
 
 @autobind
 export default class DriftApp extends React.Component {
@@ -25,9 +27,8 @@ export default class DriftApp extends React.Component {
   render() {
     return (
       <Frame>
+        <Style rules={styles} />
         <Carousel showIndex={this.state.showIndex}>
-          <Nav onPrevious={this.handleClickPrevious} hasPrevious={this.state.showIndex > 0}
-               onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
           <Slide image={require('./images/1.jpg')} title="Imperial Mockery">
             In a show of defiance, rebels have again made mockery of the majesty that is service to the Empire.
             These objects were immediately removed from the reflecting pool in Coruscant's Central Square when found
@@ -50,6 +51,8 @@ export default class DriftApp extends React.Component {
             rotating troopers stationed on the forest moons of Endor after several rotations.
           </Slide>
         </Carousel>
+        <Nav onPrevious={this.handleClickPrevious} hasPrevious={this.state.showIndex > 0}
+             onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
       </Frame>
     )
   }
