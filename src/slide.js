@@ -8,10 +8,10 @@ export default class Slide extends React.Component {
   }
   render() {
     return (
-      <article style={this.props.style}>
+      <article className="dft__slide" style={this.props.style}>
         <img src={this.props.image} alt={this.props.title} />
-        <footer>
-          <h2>{this.props.title}</h2>
+        <footer className="dft__slide__footer">
+          <h2 className="dft__slide__footer__title">{this.props.title}</h2>
           <div>{this.props.children}</div>
         </footer>
       </article>

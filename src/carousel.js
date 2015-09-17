@@ -37,7 +37,7 @@ export default class Carousel extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="dft__carousel">
         {this.renderSlides()}
         {this.renderNav()}
       </div>
