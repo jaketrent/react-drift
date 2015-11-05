@@ -5,6 +5,7 @@ export default {
   html: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: 14,
-    lineHeight: '1.4em'
+    lineHeight: '1.4em',
+    backgroundColor: '#1D272F'
   }
 }
