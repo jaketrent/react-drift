@@ -1,5 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import DriftApp from './src'
 
-React.render(<DriftApp />, document.getElementById('app'))
+ReactDOM.render(<DriftApp />, document.getElementById('app'))

@@ -1,11 +1,5 @@
 import React from 'react'
 
-export default class Frame extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    )
-  }
+export default function Frame({ children }) {
+  return <div>{children}</div>
 }

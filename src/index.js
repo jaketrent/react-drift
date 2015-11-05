@@ -22,12 +22,14 @@ export default class DriftApp extends React.Component {
       showIndex: Math.min(this.state.showIndex + 1, this.state.numSlides - 1)
     })
   }
+  renderNav() {
+    return <Nav onPrevious={this.handleClickPrevious} hasPrevious={this.state.showIndex > 0}
+         onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
+  }
   render() {
     return (
       <Frame>
-        <Carousel showIndex={this.state.showIndex}>
-          <Nav onPrevious={this.handleClickPrevious} hasPrevious={this.state.showIndex > 0}
-               onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
+        <Carousel showIndex={this.state.showIndex} nav={this.renderNav()}>
           <Slide image={require('./images/1.jpg')} title="Imperial Mockery">
             In a show of defiance, rebels have again made mockery of the majesty that is service to the Empire.
             These objects were immediately removed from the reflecting pool in Coruscant's Central Square when found

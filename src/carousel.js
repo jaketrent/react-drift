@@ -1,46 +1,37 @@
-import React from 'react/addons'
+import React from 'react'
 
-const { number } = React.PropTypes
+const { node, number } = React.PropTypes
 
-export default class Carousel extends React.Component {
-  static propTypes = {
-    width: number,
-    showIndex: number
-  }
-  static defaultProps = {
-    width: 640,
-    showIndex: 0
-  }
-  renderNav() {
-    var nav
-    React.Children.forEach(this.props.children, (child, i) => {
-      if (/Nav/.test(child.type.displayName))
-        nav = child
-    })
-    return nav
-  }
-  renderSlides() {
-    var slides = []
-    var slideIndex = 0
-    React.Children.forEach(this.props.children, (child, i) => {
-      if (/Slide/.test(child.type.displayName)) {
-        slides.push(React.addons.cloneWithProps(child, {
-          key: i,
-          style: {
-            width: this.props.width,
-            left: this.props.width * (slideIndex++ - this.props.showIndex)
-          }
-        }))
+function renderSlides(props) {
+  return React.Children.map(props.children, (slide, i) => {
+    return React.cloneElement(slide, {
+      style: {
+        ...slide.props.style,
+        width: props.width,
+        left: props.width * (i - props.showIndex)
       }
     })
-    return slides
-  }
-  render() {
-    return (
-      <div>
-        {this.renderSlides()}
-        {this.renderNav()}
-      </div>
-    )
-  }
+  })
 }
+
+function Carousel(props) {
+  return (
+    <div>
+      {renderSlides(props)}
+      {props.nav}
+    </div>
+  )
+}
+
+Carousel.propTypes = {
+  nav: node.isRequired,
+  showIndex: number,
+  width: number
+}
+
+Carousel.defaultProps = {
+  width: 640,
+  showIndex: 0
+}
+
+export default Carousel

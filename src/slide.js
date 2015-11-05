@@ -1,20 +1,23 @@
 import React from 'react'
 
-export default class Slide extends React.Component {
-  static displayName = 'Slide'
-  static propTypes = {
-    image: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string
-  }
-  render() {
-    return (
-      <article style={this.props.style}>
-        <img src={this.props.image} alt={this.props.title} />
-        <footer>
-          <h2>{this.props.title}</h2>
-          <div>{this.props.children}</div>
-        </footer>
-      </article>
-    )
-  }
+const { object, string } = React.PropTypes
+
+function Slide(props) {
+  return (
+    <article style={props.style}>
+      <img src={props.image} alt={props.title} />
+      <footer>
+        <h2>{props.title}</h2>
+        <div>{props.children}</div>
+      </footer>
+    </article>
+  )
 }
+
+Slide.propTypes = {
+  image: string.isRequired,
+  style: object,
+  title: string
+}
+
+export default Slide
