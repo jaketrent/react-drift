@@ -21,6 +21,10 @@
   "bugs": {
     "url": "https://github.com/jaketrent/react-drift/issues"
   },
+  "engines": {
+    "node": ">= 5.0.0",
+    "npm": ">= 3.3.6"
+  },
   "homepage": "https://github.com/jaketrent/react-drift#readme",
   "devDependencies": {
     "autobind-decorator": "^1.2.0",
