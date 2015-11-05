@@ -29,9 +29,4 @@ Carousel.propTypes = {
   width: number
 }
 
-Carousel.defaultProps = {
-  width: 640,
-  showIndex: 0
-}
-
 export default Carousel
