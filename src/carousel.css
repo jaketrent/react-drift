@@ -1,0 +1,7 @@
+@import "./config.css";
+
+.root {
+  position: relative;
+  overflow: hidden;
+  height: var(--imageHeight);
+}
