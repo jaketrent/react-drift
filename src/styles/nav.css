@@ -5,7 +5,7 @@
     transform: scale3d(1, 1, 1);
   }
   15% {
-    transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.05, 1.05, 1.05);
   }
   30% {
     transform: scale3d(1, 1, 1);
@@ -26,7 +26,6 @@
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 50px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
   padding: 20px;
   vertical-align: top;
@@ -36,8 +35,8 @@
   animation: pulse 4s 2s infinite;
 }
 .dft__nav__btn:hover {
-  transition: all 1s;
-  color: rgb(255, 237, 151);
+  transition: all .5s;
+  color: #8c9ea3;
 }
 .dft__nav__btn--prev {
   text-align: left;
