@@ -1,13 +1,16 @@
 import React from 'react'
+import styleable from 'react-styleable'
+
+import css from './slide.css'
 
 const { object, string } = React.PropTypes
 
 function Slide(props) {
   return (
-    <article style={props.style}>
+    <article style={props.style} className={props.css.root}>
       <img src={props.image} alt={props.title} />
-      <footer>
-        <h2>{props.title}</h2>
+      <footer className={props.css.footer}>
+        <h2 className={props.css.title}>{props.title}</h2>
         <div>{props.children}</div>
       </footer>
     </article>
@@ -20,4 +23,4 @@ Slide.propTypes = {
   title: string
 }
 
-export default Slide
+export default styleable(css)(Slide)
