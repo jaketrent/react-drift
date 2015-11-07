@@ -38,6 +38,7 @@
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-hot-loader": "^2.0.0-alpha-4",
+    "react-styleable": "^2.0.0",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.1.1",
