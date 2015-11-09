@@ -22,6 +22,9 @@ module.exports = {
       },
       {
         test: /\.jpg/, loader: 'file'
+      },
+      {
+        test: /\.css/, loader: 'style!css?modules&localIdentName=[local]---[hash:base64:5]!cssnext'
       }
     ]
   },

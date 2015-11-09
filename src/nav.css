@@ -1,0 +1,57 @@
+@import "./config.css";
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  15% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  30% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+.btn {
+  flex: 1;
+  height: var(--imageHeight);
+  padding: 20px;
+  background: transparent;
+  vertical-align: top;
+  font-size: 50px;
+  color: #fff;
+  border: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+  outline: 0;
+  cursor: pointer;
+  user-select: none;
+}
+.btn:hover {
+  animation: pulse 4s 2s infinite;
+  transition: all 1s;
+  color: rgb(255, 237, 151);
+}
+.prev {
+  composes: btn;
+  text-align: left;
+}
+.next {
+  composes: btn;
+  text-align: right;
+}
+.hidden {
+  visibility: hidden;
+}
+.prevHidden {
+  composes: prev hidden;
+}
+.nextHidden {
+  composes: next hidden;
+}
