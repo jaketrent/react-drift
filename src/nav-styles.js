@@ -11,7 +11,7 @@ const pulse = Radium.keyframes({
   },
   '100%': {
     transform: 'scale3d(1, 1, 1)'
-  },
+  }
 }, 'Nav')
 
 const btn = {
