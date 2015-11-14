@@ -28,6 +28,11 @@ const hidden = {
   visibility: 'hidden'
 }
 
+const hover = {
+  transition: 'all 1s',
+  color: '#8c9ea3'
+}
+
 export default {
   root: {
     position: 'absolute',
@@ -41,9 +46,17 @@ export default {
     ...prev,
     ...hidden
   },
+  prevHover: {
+    ...prev,
+    ...hover
+  },
   next,
   nextHidden: {
     ...next,
     ...hidden
+  },
+  nextHover: {
+    ...next,
+    ...hover
   }
 }

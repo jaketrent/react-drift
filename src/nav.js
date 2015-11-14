@@ -1,24 +1,59 @@
+import autobind from 'autobind-decorator'
 import React from 'react'
 
 import styles from './nav-styles'
 
 const { func, bool } = React.PropTypes
 
-function getPrevStyles(props) {
-  return props.hasPrevious ? styles.prev : styles.prevHidden
+function getPrevStyles(props, state) {
+  if (!props.hasPrevious)
+    return styles.prevHidden
+  else if (state.isHovered.prev)
+    return styles.prevHover
+  else
+    return styles.prev
 }
 
-function getNextStyles(props) {
-  return props.hasNext ? styles.next : styles.nextHidden
+function getNextStyles(props, state) {
+  if (!props.hasNext)
+    return styles.nextHidden
+  else if (state.isHovered.next)
+    return styles.nextHover
+  else
+    return styles.next
 }
 
-function Nav(props) {
-  return (
-    <div style={styles.root}>
-      <button style={getPrevStyles(props)} onClick={props.onPrevious}>&#10094;</button>
-      <button style={getNextStyles(props)} onClick={props.onNext}>&#10095;</button>
-    </div>
-  )
+@autobind
+class Nav extends React.Component {
+  state = {
+    isHovered: {
+      prev: false,
+      next: false
+    }
+  }
+  toggleHover(side, toggle) {
+    this.setState({
+      isHovered: {
+        ...this.state.isHovered,
+        [side]: toggle
+      }
+    })
+  }
+  render() {
+    const { props, state } = this
+    return (
+      <div style={styles.root}>
+        <button onClick={props.onPrevious}
+                onMouseEnter={this.toggleHover.bind(this, 'prev', true)}
+                onMouseLeave={this.toggleHover.bind(this, 'prev', false)}
+                style={getPrevStyles(props, state)}>&#10094;</button>
+        <button onClick={props.onNext}
+                onMouseEnter={this.toggleHover.bind(this, 'next', true)}
+                onMouseLeave={this.toggleHover.bind(this, 'next', false)}
+                style={getNextStyles(props, state)}>&#10095;</button>
+      </div>
+    )
+  }
 }
 
 Nav.propTypes = {
