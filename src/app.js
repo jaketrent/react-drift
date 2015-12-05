@@ -29,9 +29,10 @@ export default class DriftApp extends React.Component {
                 onNext={this.handleClickNext} hasNext={this.state.showIndex < this.state.numSlides - 1} />
   }
   render() {
+    const imageWidth = 640 // from css
     return (
       <Frame>
-        <Carousel showIndex={this.state.showIndex} nav={this.renderNav()} width={640}>
+        <Carousel showIndex={this.state.showIndex} nav={this.renderNav()} width={imageWidth}>
           <Slide image={require('./images/1.jpg')} title="Imperial Mockery">
             In a show of defiance, rebels have again made mockery of the majesty that is service to the Empire.
             These objects were immediately removed from the reflecting pool in Coruscant's Central Square when found
