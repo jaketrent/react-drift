@@ -1,4 +1,8 @@
 var path = require('path')
+var postcssBrowserReporter = require('postcss-browser-reporter')
+var postcssCssNext = require('postcss-cssnext')
+var postcssImport = require('postcss-import')
+var postcssReporter = require('postcss-reporter')
 var webpack = require('webpack')
 
 module.exports = {
@@ -26,7 +30,13 @@ module.exports = {
       loader: 'file'
     }, {
       test: /\.css/,
-      loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext']
+      loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'postcss']
     }]
-  }
+  },
+  postcss: [
+    postcssImport,
+    postcssCssNext,
+    postcssBrowserReporter,
+    postcssReporter
+  ]
 }
