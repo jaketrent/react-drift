@@ -1,0 +1,5 @@
+.dft__carousel {
+  position: relative;
+  overflow: hidden;
+  height: var(--imageHeight);
+}

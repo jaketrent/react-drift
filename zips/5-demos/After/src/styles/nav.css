@@ -1,0 +1,47 @@
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  15% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  30% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.dft__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+.dft__nav__btn {
+  flex: 1;
+  height: var(--imageHeight);
+  font-size: 50px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+  padding: 20px;
+  vertical-align: top;
+  cursor: pointer;
+  user-select: none;
+  outline: 0;
+  animation: pulse 4s 2s infinite;
+}
+.dft__nav__btn:hover {
+  transition: all .5s;
+  color: #8c9ea3;
+}
+.dft__nav__btn--prev {
+  text-align: left;
+}
+.dft__nav__btn--next {
+  text-align: right;
+}
+.dft__nav__btn--hidden {
+  visibility: hidden;
+}
