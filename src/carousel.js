@@ -1,9 +1,8 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styleable from 'react-styleable'
 
 import css from './carousel.css'
-
-const { node, number } = React.PropTypes
 
 function renderSlides(props) {
   return React.Children.map(props.children, (slide, i) => {
@@ -27,9 +26,9 @@ function Carousel(props) {
 }
 
 Carousel.propTypes = {
-  nav: node.isRequired,
-  showIndex: number,
-  width: number
+  nav: PropTypes.node.isRequired,
+  showIndex: PropTypes.number,
+  width: PropTypes.number
 }
 
 export default styleable(css)(Carousel)
