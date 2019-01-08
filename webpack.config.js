@@ -1,27 +1,16 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const htmlWebpackTemplate = require("html-webpack-template");
+const path = require('path')
 
-var path = require("path");
-var webpack = require("webpack");
-
-const include = path.join(__dirname, "src");
+const include = path.join(__dirname, 'src')
 
 module.exports = {
-  devtool: "source-map",
-  mode: "development",
-  entry: ["./src/index"],
+  devtool: 'source-map',
+  mode: 'development',
+  entry: ['./src/index'],
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/static/"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: htmlWebpackTemplate,
-      appMountId: "app"
-    })
-  ],
   devServer: {
     port: 3000
   },
@@ -31,10 +20,10 @@ module.exports = {
         test: /\.js$/,
         loaders: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               babelrc: false,
-              presets: ["@babel/preset-react", "@babel/preset-env"]
+              presets: ['@babel/preset-react', '@babel/preset-env']
             }
           }
         ],
@@ -42,25 +31,25 @@ module.exports = {
       },
       {
         test: /\.jpg/,
-        loaders: ["file-loader"],
+        loaders: ['file-loader'],
         include
       },
       {
         test: /\.css/,
         loaders: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: "[local]---[hash:base64:5]",
+              localIdentName: '[local]---[hash:base64:5]',
               importLoaders: 1
             }
           },
-          "postcss-loader"
+          'postcss-loader'
         ],
         include
       }
     ]
   }
-};
+}
