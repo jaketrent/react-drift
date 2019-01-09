@@ -1,8 +1,7 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-import styles from './nav-styles'
-
-const { func, bool } = React.PropTypes
+import styles from './nav-styles.js'
 
 function getPrevStyles(props) {
   return props.hasPrevious ? styles.prev : styles.prevHidden
@@ -15,17 +14,21 @@ function getNextStyles(props) {
 function Nav(props) {
   return (
     <div style={styles.root}>
-      <button style={getPrevStyles(props)} onClick={props.onPrevious}>&#10094;</button>
-      <button style={getNextStyles(props)} onClick={props.onNext}>&#10095;</button>
+      <button style={getPrevStyles(props)} onClick={props.onPrevious}>
+        &#10094;
+      </button>
+      <button style={getNextStyles(props)} onClick={props.onNext}>
+        &#10095;
+      </button>
     </div>
   )
 }
 
 Nav.propTypes = {
-  onPrevious: func.isRequired,
-  onNext: func.isRequired,
-  hasPrevious: bool,
-  hasNext: bool
+  onPrevious: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  hasPrevious: PropTypes.bool,
+  hasNext: PropTypes.bool
 }
 
 export default Nav
