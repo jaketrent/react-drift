@@ -1,6 +1,5 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-
-const { object, string } = React.PropTypes
 
 function Slide(props) {
   return (
@@ -15,9 +14,9 @@ function Slide(props) {
 }
 
 Slide.propTypes = {
-  image: string.isRequired,
-  style: object,
-  title: string
+  image: PropTypes.string.isRequired,
+  style: PropTypes.object,
+  title: PropTypes.string
 }
 
 export default Slide

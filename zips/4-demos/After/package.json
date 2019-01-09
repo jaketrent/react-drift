@@ -4,7 +4,7 @@
   "description": "Image slider in react",
   "main": "index.js",
   "scripts": {
-    "start": "node dev-server.js"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -22,28 +22,27 @@
     "url": "https://github.com/jaketrent/react-drift/issues"
   },
   "engines": {
-    "node": ">= 5.0.0",
-    "npm": ">= 3.3.6"
+    "node": "8.x",
+    "npm": "5.x"
   },
   "homepage": "https://github.com/jaketrent/react-drift#readme",
   "devDependencies": {
-    "autobind-decorator": "1.2.0",
-    "babel-core": "5.8.33",
-    "babel-loader": "5.3.3",
-    "babel-plugin-react-transform": "1.1.1",
-    "css-loader": "0.22.0",
-    "cssnext-loader": "1.0.1",
-    "express": "4.13.3",
-    "file-loader": "0.8.4",
-    "react": "0.14.2",
-    "react-dom": "0.14.2",
-    "react-hot-loader": "2.0.0-alpha-4",
-    "react-transform-catch-errors": "1.0.0",
-    "react-transform-hmr": "1.0.1",
-    "redbox-react": "1.1.1",
-    "style-loader": "0.13.0",
-    "webpack": "1.12.2",
-    "webpack-dev-middleware": "1.2.0",
-    "webpack-hot-middleware": "2.4.1"
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.5",
+    "css-loader": "2.1.0",
+    "file-loader": "3.0.1",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.5.0",
+    "prop-types": "15.6.2",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-styleable": "3.3.1",
+    "style-loader": "0.23.1",
+    "webpack": "4.28.3",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14"
   }
 }
