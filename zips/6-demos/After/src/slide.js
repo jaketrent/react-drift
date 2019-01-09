@@ -1,9 +1,8 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styleable from 'react-styleable'
 
 import css from './slide.css'
-
-const { object, string } = React.PropTypes
 
 function Slide(props) {
   return (
@@ -18,9 +17,9 @@ function Slide(props) {
 }
 
 Slide.propTypes = {
-  image: string.isRequired,
-  style: object,
-  title: string
+  image: PropTypes.string.isRequired,
+  style: PropTypes.object,
+  title: PropTypes.string
 }
 
 export default styleable(css)(Slide)
