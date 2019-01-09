@@ -1,9 +1,8 @@
+import PropTypes from 'prop-types'
 import Radium from 'radium'
 import React from 'react'
 
-import styles from './carousel-styles'
-
-const { node, number } = React.PropTypes
+import styles from './carousel-styles.js'
 
 function renderSlides(props) {
   return React.Children.map(props.children, (slide, i) => {
@@ -27,9 +26,9 @@ function Carousel(props) {
 }
 
 Carousel.propTypes = {
-  nav: node.isRequired,
-  showIndex: number,
-  width: number
+  nav: PropTypes.node.isRequired,
+  showIndex: PropTypes.number,
+  width: PropTypes.number
 }
 
 export default Radium(Carousel)

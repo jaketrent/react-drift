@@ -1,18 +1,21 @@
 import Radium from 'radium'
 
-import config from './config-styles'
+import config from './config-styles.js'
 
-const pulse = Radium.keyframes({
-  '0%': {
-    transform: 'scale3d(1, 1, 1)'
+const pulse = Radium.keyframes(
+  {
+    '0%': {
+      transform: 'scale3d(1, 1, 1)'
+    },
+    '15%': {
+      transform: 'scale3d(1.05, 1.05, 1.05)'
+    },
+    '100%': {
+      transform: 'scale3d(1, 1, 1)'
+    }
   },
-  '15%': {
-    transform: 'scale3d(1.05, 1.05, 1.05)'
-  },
-  '100%': {
-    transform: 'scale3d(1, 1, 1)'
-  }
-}, 'Nav')
+  'Nav'
+)
 
 const btn = {
   flex: 1,

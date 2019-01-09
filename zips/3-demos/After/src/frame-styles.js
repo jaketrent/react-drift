@@ -1,4 +1,4 @@
-import config from './config-styles'
+import config from './config-styles.js'
 
 export default {
   root: {

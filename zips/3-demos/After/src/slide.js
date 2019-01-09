@@ -1,13 +1,12 @@
+import PropTypes from 'prop-types'
 import Radium from 'radium'
 import React from 'react'
 
-import styles from './slide-styles'
-
-const { object, string } = React.PropTypes
+import styles from './slide-styles.js'
 
 function Slide(props) {
   return (
-    <article style={[ styles.root, props.style]}>
+    <article style={[styles.root, props.style]}>
       <img src={props.image} alt={props.title} />
       <footer style={styles.footer}>
         <h2 style={styles.title}>{props.title}</h2>
@@ -18,9 +17,9 @@ function Slide(props) {
 }
 
 Slide.propTypes = {
-  image: string.isRequired,
-  style: object,
-  title: string
+  image: PropTypes.string.isRequired,
+  style: PropTypes.object,
+  title: PropTypes.string
 }
 
 export default Radium(Slide)
