@@ -1,6 +1,5 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-
-const { func, bool } = React.PropTypes
 
 function Nav(props) {
   return (
@@ -12,10 +11,10 @@ function Nav(props) {
 }
 
 Nav.propTypes = {
-  onPrevious: func.isRequired,
-  onNext: func.isRequired,
-  hasPrevious: bool,
-  hasNext: bool
+  onPrevious: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  hasPrevious: PropTypes.bool,
+  hasNext: PropTypes.bool
 }
 
 export default Nav
