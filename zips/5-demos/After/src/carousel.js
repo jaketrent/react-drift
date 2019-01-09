@@ -1,6 +1,5 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-
-const { node, number } = React.PropTypes
 
 function renderSlides(props) {
   return React.Children.map(props.children, (slide, i) => {
@@ -24,9 +23,9 @@ function Carousel(props) {
 }
 
 Carousel.propTypes = {
-  nav: node.isRequired,
-  showIndex: number,
-  width: number
+  nav: PropTypes.node.isRequired,
+  showIndex: PropTypes.number,
+  width: PropTypes.number
 }
 
 export default Carousel
