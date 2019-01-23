@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styleable from 'react-styleable'
 
-import css from './carousel.css'
+import css from './carousel.module.css'
 
 function renderSlides(props) {
   return React.Children.map(props.children, (slide, i) => {

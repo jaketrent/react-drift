@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styleable from 'react-styleable'
 
-import css from './nav.css'
+import css from './nav.module.css'
 
 function getPrevClassName(props) {
   return props.hasPrevious ? props.css.prev : props.css.prevHidden

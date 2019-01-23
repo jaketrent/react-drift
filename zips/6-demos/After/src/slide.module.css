@@ -1,4 +1,4 @@
-@import "./config.css";
+@import "./config.module.css";
 
 :root {
   --footerHeight: 110px;
