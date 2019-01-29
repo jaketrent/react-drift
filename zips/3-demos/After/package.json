@@ -21,10 +21,6 @@
   "bugs": {
     "url": "https://github.com/jaketrent/react-drift/issues"
   },
-  "engines": {
-    "node": "8.x",
-    "npm": "5.x"
-  },
   "homepage": "https://github.com/jaketrent/react-drift#readme",
   "devDependencies": {
     "@babel/core": "7.2.2",
